@@ -1,0 +1,49 @@
+/* General */
+a {
+    text-decoration: none;
+}
+/* Intro */
+.intro {
+    background: url('/public/introImg.jpeg') no-repeat;
+    background-size: cover;
+}
+.intro .kk {
+    min-height: 80dvh;
+}
+.intro .bg-wrap {
+    background: #0000006e;
+}
+
+/* solution */
+.solution .card {
+    border: 3px solid var(--bs-info);
+    border-radius: 20px;
+}
+.solution .card-icon span {
+    padding: 14px;
+    display: flex;
+    align-items: center;
+}
+
+/* contact */
+.contact li {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer .logo-con .l-img {
+    font-size: 80px;
+}
+footer li, footer span, footer a, footer p {
+    color: #b3b3b3;
+}
+
+/* Auth Form */
+
+.auth-form .wrap {
+    min-height: 50dvh;
+}
+.auth-form .finger{
+    font-size: 80px;
+}
