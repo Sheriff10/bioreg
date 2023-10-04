@@ -47,3 +47,9 @@ footer li, footer span, footer a, footer p {
 .auth-form .finger{
     font-size: 80px;
 }
+
+/* Success */
+.success {
+    backdrop-filter: blur(6px);
+    background: #00000054;
+}

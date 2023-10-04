@@ -11,7 +11,7 @@ export default function Signup() {
                <div className="col py-5 px-3 my-5 shadow">
                   <form action="">
                      <div className="heading pb-4">
-                        <span className="fw-bold fs-5">Create an Account</span>
+                        <span className="fw-bold fs-5">Enroll for a course</span>
                      </div>
                      {/* Matric and Course */}
                      <div className="form-group">
@@ -27,32 +27,18 @@ export default function Signup() {
                               <input
                                  type="text"
                                  className="form-control mb-3"
-                                 placeholder="Department / Course"
+                                 placeholder="Course"
                               />
                            </div>
                         </div>
                      </div>
 
-                     {/* Name and Password */}
+                     {/* Name  */}
                      <div className="input-group">
                         <input
                            type="text"
                            className="form-control mb-3"
                            placeholder="Full name"
-                        />
-                     </div>
-                     <div className="input-group">
-                        <input
-                           type="password"
-                           className="form-control mb-3"
-                           placeholder="Password"
-                        />
-                     </div>
-                     <div className="input-group">
-                        <input
-                           type="password"
-                           className="form-control mb-3"
-                           placeholder="Confirm password"
                         />
                      </div>
 
@@ -67,7 +53,7 @@ export default function Signup() {
                      <div className="d-flex mt-3">
                         <small>
                            <Link to={"/login"} className="text-info fw-bold">
-                              Already have an account? Login
+                              Already enrolled? Mark attendance!
                            </Link>
                         </small>
                      </div>
