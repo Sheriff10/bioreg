@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { FaFingerprint } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PuffLoader } from "react-spinners";
 import post from "../controller/post";
+import EnrollSuccess from "./enroll-success";
 
 export default function Signup() {
    const [matric, setMatric] = useState("");
@@ -11,20 +12,28 @@ export default function Signup() {
 
    const [err, setErr] = useState(false);
    const [loading, setLoading] = useState(false);
+   const [success, setSuccess] = useState(false);
+
+   const navi = useNavigate();
 
    const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-         setLoading(true)
+         setLoading(true);
          const data = { matric, course, fullname };
          const response = await post("/enroll", data);
          console.log(response);
-         setLoading(false)
+         setLoading(false);
+         setSuccess(true);
       } catch (error) {
          console.log(error.response.data);
          setErr(true); // set err true
-         setLoading(false)
+         setLoading(false);
       }
+   };
+   const handleSuccess = () => {
+      setSuccess(false);
+      navi("/verify");
    };
    return (
       <div className="auth-form signup" onSubmit={handleSubmit}>
@@ -32,6 +41,12 @@ export default function Signup() {
             <div className="d-flex flex-wrap gap-5 col-lg-10 mx-auto">
                {/* Text-Form section */}
                <div className="col py-5 px-3 my-5 shadow">
+                  {success && (
+                     <EnrollSuccess
+                        message={`Congratulation ${fullname}! You have successfully enrolled for ${course} course with matric number ${matric}. Proceed to mark attendance for this course `}
+                        toggle={handleSuccess}
+                     />
+                  )}
                   <form action="">
                      <div className="heading pb-4">
                         <span className="fw-bold fs-5">

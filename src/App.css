@@ -52,4 +52,5 @@ footer li, footer span, footer a, footer p {
 .success {
     backdrop-filter: blur(6px);
     background: #00000054;
+    z-index: 5;
 }

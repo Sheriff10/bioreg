@@ -42,7 +42,7 @@ export default function Login() {
          <div className="container wrap py-3">
             <div className="col-lg-4  px-3 my-5 mx-auto shadow">
                <form action="">
-                  {success && <Success toggle={setSuccess} message={"Data and Fingerprint Verified"} />}
+                  {success && <Success toggle={setSuccess} message={"Data and Fingerprint Verified. Your attendance has been marked"} />}
                   {success == "failed" && <Failed toggle={setSuccess} message={"Data and Fingerprint Verficiation Failed"} />}
                   {/* Fingerprint Record section */}
                   <div className="col">
