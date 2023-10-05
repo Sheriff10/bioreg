@@ -1,17 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaFingerprint } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { PuffLoader } from "react-spinners";
+import post from "../controller/post";
 
 export default function Signup() {
+   const [matric, setMatric] = useState("");
+   const [course, setCourse] = useState("");
+   const [fullname, setFullname] = useState("");
+
+   const [err, setErr] = useState(false);
+   const [loading, setLoading] = useState(false);
+
+   const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+         setLoading(true)
+         const data = { matric, course, fullname };
+         const response = await post("/enroll", data);
+         console.log(response);
+         setLoading(false)
+      } catch (error) {
+         console.log(error.response.data);
+         setErr(true); // set err true
+         setLoading(false)
+      }
+   };
    return (
-      <div className="auth-form signup">
+      <div className="auth-form signup" onSubmit={handleSubmit}>
          <div className="container wrap py-3">
             <div className="d-flex flex-wrap gap-5 col-lg-10 mx-auto">
                {/* Text-Form section */}
                <div className="col py-5 px-3 my-5 shadow">
                   <form action="">
                      <div className="heading pb-4">
-                        <span className="fw-bold fs-5">Enroll for a course</span>
+                        <span className="fw-bold fs-5">
+                           Enroll for a course
+                        </span>
                      </div>
                      {/* Matric and Course */}
                      <div className="form-group">
@@ -19,18 +44,34 @@ export default function Signup() {
                            <div className="col mb-3">
                               <input
                                  type="text"
-                                 className="form-control mb-3"
+                                 className={`form-control mb-3 mb-lg-0 ${
+                                    err && "border-1 border-danger"
+                                 }`}
                                  placeholder="Matric No"
+                                 value={matric}
+                                 onChange={(e) => setMatric(e.target.value)}
+                                 required
                               />
                            </div>
                            <div className="col mb-3">
                               <input
                                  type="text"
-                                 className="form-control mb-3"
+                                 className="form-control mb-3 mb-lg-0"
                                  placeholder="Course"
+                                 value={course}
+                                 onChange={(e) => setCourse(e.target.value)}
+                                 required
                               />
                            </div>
                         </div>
+                        {/* Error Section */}
+                        {err && (
+                           <div className="err-wrap col-12 mb-2">
+                              <small className="text-danger">
+                                 Matric in use
+                              </small>
+                           </div>
+                        )}
                      </div>
 
                      {/* Name  */}
@@ -39,14 +80,24 @@ export default function Signup() {
                            type="text"
                            className="form-control mb-3"
                            placeholder="Full name"
+                           value={fullname}
+                           onChange={(e) => setFullname(e.target.value)}
+                           required
                         />
                      </div>
 
                      {/* Submit button */}
                      <div className="btn-wrap">
-                        <div className="btn btn-info rounded-pill w-100">
-                           Signup
-                        </div>
+                        <button
+                           type="submit"
+                           className="btn btn-info rounded-pill w-100"
+                        >
+                           {loading ? (
+                              <PuffLoader size={25} color="#000" />
+                           ) : (
+                              "Enroll"
+                           )}
+                        </button>
                      </div>
 
                      {/* Info */}

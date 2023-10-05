@@ -2,7 +2,7 @@ import React from "react";
 import { FaFingerprint } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-export default function Success() {
+export default function Success({toggle, message}) {
    return (
       <div className="auth-form success position-fixed top-0 bottom-0 start-0 end-0 ">
          <div className="container h-100 d-flex align-items-center wrap py-3">
@@ -19,7 +19,7 @@ export default function Success() {
 
                         {/* Fingerprint Section  */}
                         <div className="finger-wrap">
-                           <small>Fingerprint Verified!</small> <br />
+                           <small>{message}</small> <br />
                            <span className="finger text-success">
                               <FaFingerprint />
                            </span>
@@ -29,7 +29,7 @@ export default function Success() {
 
                   {/* Submit button */}
                   <div className="btn-wrap mb-4">
-                     <div className="btn btn-success rounded-pill w-100">OK</div>
+                     <div className="btn btn-success rounded-pill w-100" onClick={() => toggle(false)}>OK</div>
                   </div>
                </form>
             </div>

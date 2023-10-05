@@ -8,6 +8,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
 function App() {
+   window.api = "http://localhost:5000"
    return (
       <div className="App">
          <Header />
