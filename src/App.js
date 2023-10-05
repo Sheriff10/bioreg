@@ -8,7 +8,8 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
 function App() {
-   window.api = "http://localhost:5000"
+   // window.api = "http://localhost:5000"
+   window.api = "https://zealous-gabardine-seal.cyclic.app";
    return (
       <div className="App">
          <Header />
