@@ -14,8 +14,8 @@ function App() {
          <Header />
          <Routes>
             <Route index element={<Home />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/enroll" element={<Signup />} />
+            <Route path="/verify" element={<Login />} />
          </Routes>
          <Footer />
       </div>

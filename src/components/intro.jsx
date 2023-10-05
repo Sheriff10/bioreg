@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Intro() {
+   const navi = useNavigate()
    return (
       <div className="intro">
          <div className="bg-wrap">
@@ -13,12 +15,12 @@ export default function Intro() {
                         <span>Making impersonation impossible</span>
                      </div>
                      <div className="btn-wrap d-flex gap-3 justify-content-between">
-                        <button className="btn btn-info px-5 rounded-pill col">
-                           Signup
+                        <button className="btn btn-info rounded-pill col" onClick={navi('/enroll')}>
+                           Enroll
                         </button>
-                        <button className="btn btn-outline-info px-5 rounded-pill col">
-                           Login
-                        </button>
+                        <a href="#about" className="btn btn-outline-info rounded-pill col">
+                           About Bioreg
+                        </a>
                      </div>
                   </div>
                </div>

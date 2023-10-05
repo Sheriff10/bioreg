@@ -123,7 +123,7 @@ export default function Login() {
                   {/* Info */}
                   <div className="d-flex mt-3 pb-4">
                      <small>
-                        <Link to={"/signup"} className="text-info fw-bold">
+                        <Link to={"/enroll"} className="text-info fw-bold">
                            Not enrolled in this course? Enroll now!
                         </Link>
                      </small>

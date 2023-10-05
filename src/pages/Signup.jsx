@@ -14,7 +14,7 @@ export default function Signup() {
    const [loading, setLoading] = useState(false);
    const [success, setSuccess] = useState(false);
 
-   const navi = useNavigate();
+   const navi = useNavigate()
 
    const handleSubmit = async (e) => {
       e.preventDefault();
@@ -33,14 +33,14 @@ export default function Signup() {
    };
    const handleSuccess = () => {
       setSuccess(false);
-      navi("/verify");
+      navi('/verify')
    };
    return (
       <div className="auth-form signup" onSubmit={handleSubmit}>
          <div className="container wrap py-3">
-            <div className="d-flex flex-wrap gap-5 col-lg-10 mx-auto">
+            <div className="row justify-content-between flex-wrap  col-lg-10 mx-auto">
                {/* Text-Form section */}
-               <div className="col py-5 px-3 my-5 shadow">
+               <div className="col-md-5 py-5 px-3 my-5 shadow">
                   {success && (
                      <EnrollSuccess
                         message={`Congratulation ${fullname}! You have successfully enrolled for ${course} course with matric number ${matric}. Proceed to mark attendance for this course `}
@@ -118,7 +118,7 @@ export default function Signup() {
                      {/* Info */}
                      <div className="d-flex mt-3">
                         <small>
-                           <Link to={"/login"} className="text-info fw-bold">
+                           <Link to={"/verify"} className="text-info fw-bold">
                               Already enrolled? Mark attendance!
                            </Link>
                         </small>
@@ -126,7 +126,7 @@ export default function Signup() {
                   </form>
                </div>
                {/* Fingerprint Record section */}
-               <div className="col">
+               <div className="col-md-5">
                   <div className="record-wrap py-5 px-3 my-5 shadow text-center">
                      <div className="heading">
                         <span className="fw-bold fs-5">Record Fingerprint</span>

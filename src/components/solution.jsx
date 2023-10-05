@@ -23,7 +23,7 @@ export default function Solution() {
       ),
    ];
    return (
-      <div className="solution py-5">
+      <div className="solution py-5" id="solution">
          <div className="container">
             <div className="heading mb-5">
                <span className="badge bg-info">SOLUTIONS</span>
