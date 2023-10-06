@@ -10,7 +10,7 @@ export default function Intro() {
                <div className="row kk justify-content-center align-items-center">
                   <div className="col-lg-6 text-light">
                      <div className="intro-text py-4">
-                        <h1>UNILORIN Student Course Biometric Registration.</h1>
+                        <h1>A Fingerprint Recognition Student Attendance System</h1>
                         <span>Securing the future of students.. </span> <br />
                         <span>Making impersonation impossible</span>
                      </div>

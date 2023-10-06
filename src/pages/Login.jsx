@@ -13,6 +13,7 @@ export default function Login() {
    const [err, setErr] = useState(false);
    const [success, setSuccess] = useState(false);
    const [loading, setLoading] = useState(false);
+   const [name, setName] = useState('')
 
    const handleSubmit = async (e) => {
       e.preventDefault();
@@ -20,6 +21,8 @@ export default function Login() {
          setLoading(true);
          const data = { matric, course };
          const response = await post("/verify", data);
+         console.log(response)
+         setName(response.user.fullname)
          console.log(response);
          setLoading(false);
          setErr(false); // set err true
@@ -42,7 +45,7 @@ export default function Login() {
          <div className="container wrap py-3">
             <div className="col-lg-4  px-3 my-5 mx-auto shadow">
                <form action="">
-                  {success && <Success toggle={setSuccess} message={"Data and Fingerprint Verified. Your attendance has been marked"} />}
+                  {success && <Success toggle={setSuccess} message={`Congratulation ${name}! Your Data and Fingerprint is Verified. Your attendance has been marked`} />}
                   {success == "failed" && <Failed toggle={setSuccess} message={"Data and Fingerprint Verficiation Failed"} />}
                   {/* Fingerprint Record section */}
                   <div className="col">

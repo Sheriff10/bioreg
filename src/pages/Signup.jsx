@@ -9,6 +9,8 @@ export default function Signup() {
    const [matric, setMatric] = useState("");
    const [course, setCourse] = useState("");
    const [fullname, setFullname] = useState("");
+   const [level, setLevel] = useState("");
+
 
    const [err, setErr] = useState(false);
    const [loading, setLoading] = useState(false);
@@ -20,7 +22,7 @@ export default function Signup() {
       e.preventDefault();
       try {
          setLoading(true);
-         const data = { matric, course, fullname };
+         const data = { matric, course, fullname, level };
          const response = await post("/enroll", data);
          console.log(response);
          setLoading(false);
@@ -97,6 +99,18 @@ export default function Signup() {
                            placeholder="Full name"
                            value={fullname}
                            onChange={(e) => setFullname(e.target.value)}
+                           required
+                        />
+                     </div>
+
+                     {/* Level  */}
+                     <div className="input-group">
+                        <input
+                           type="text"
+                           className="form-control mb-3"
+                           placeholder="Level"
+                           value={level}
+                           onChange={(e) => setLevel(e.target.value)}
                            required
                         />
                      </div>
