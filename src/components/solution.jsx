@@ -1,5 +1,5 @@
 import React from "react";
-import { FaClock, FaFingerprint, FaShieldAlt, FaTimesCircle } from "react-icons/fa";
+import { FaClock, FaFingerprint, FaShieldAlt} from "react-icons/fa";
 
 export default function Solution() {
    const cardFunc = (icon, title, text) => {
