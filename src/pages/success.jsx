@@ -18,12 +18,12 @@ export default function Success({toggle, message}) {
                         </div>
 
                         {/* Fingerprint Section  */}
-                        {/* <div className="finger-wrap">
+                        <div className="finger-wrap">
                            <small>{message}</small> <br />
-                           <span className="finger text-success">
+                           {/* <span className="finger text-success">
                               <FaFingerprint />
-                           </span>
-                        </div> */}
+                           </span> */}
+                        </div>
                      </div>
                   </div>
 
