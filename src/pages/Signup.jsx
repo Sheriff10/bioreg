@@ -40,7 +40,7 @@ export default function Signup() {
    return (
       <div className="auth-form signup" onSubmit={handleSubmit}>
          <div className="container wrap py-3">
-            <div className="row justify-content-between flex-wrap  col-lg-10 mx-auto">
+            <div className="row justify-content-center flex-wrap  col-lg-10 mx-auto">
                {/* Text-Form section */}
                <div className="col-md-5 py-5 px-3 my-5 shadow">
                   {success && (
@@ -140,7 +140,7 @@ export default function Signup() {
                   </form>
                </div>
                {/* Fingerprint Record section */}
-               <div className="col-md-5">
+               {/* <div className="col-md-5">
                   <div className="record-wrap py-5 px-3 my-5 shadow text-center">
                      <div className="heading">
                         <span className="fw-bold fs-5">Record Fingerprint</span>
@@ -155,7 +155,7 @@ export default function Signup() {
                         </span>
                      </div>
                   </div>
-               </div>
+               </div> */}
             </div>
          </div>
       </div>

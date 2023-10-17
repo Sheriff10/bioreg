@@ -52,14 +52,14 @@ export default function Login() {
                      <div className="record-wrap py-5 px-3 my-5 text-center">
                         <div className="heading">
                            <span className="fw-bold fs-5">
-                              Mark Attendance with Fingerprint
+                              Mark Attendance
                            </span>
                         </div>
 
                         {/* Matric and Course */}
                         <div className="form-group">
                            <div className="d-flex flex-wrap gap-2 align-items-center">
-                              <div className="col mb-3">
+                              <div className="col-12 mb-3">
                                  <input
                                     type="text"
                                     className={`form-control mb-3 mb-lg-0 ${
@@ -71,7 +71,7 @@ export default function Login() {
                                     required
                                  />
                               </div>
-                              <div className="col mb-3">
+                              <div className="col-12 mb-3">
                                  <input
                                     type="text"
                                     className={`form-control mb-3 mb-lg-0 ${
@@ -97,7 +97,7 @@ export default function Login() {
                         </div>
 
                         {/* Fingerprint Section  */}
-                        <div className="finger-wrap">
+                        {/* <div className="finger-wrap">
                            <small>
                               Place your thumb on the fingerprint scanner
                            </small>{" "}
@@ -105,7 +105,7 @@ export default function Login() {
                            <span className="finger">
                               <FaFingerprint />
                            </span>
-                        </div>
+                        </div> */}
                      </div>
                   </div>
 
